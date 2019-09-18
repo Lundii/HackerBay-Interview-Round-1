@@ -1,0 +1,34 @@
+{
+  "name": "HackerBay-Interview-Round-1",
+  "version": "1.0.0",
+  "description": "Node.JS Task Round 1",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lundii/HackerBay-Interview-Round-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lundii/HackerBay-Interview-Round-1/issues"
+  },
+  "homepage": "https://github.com/Lundii/HackerBay-Interview-Round-1#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "dotenv": "^8.1.0",
+    "nodemon": "^1.19.2",
+    "debug": "^4.1.1"
+  }
+}
