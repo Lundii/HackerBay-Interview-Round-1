@@ -6,10 +6,8 @@ import bodyParser from 'body-parser';
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
-const serverLog = debug('Server:')
+const serverLog = debug('Server:');
 
-app.use(bodyParser.urlencoded( { extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(port, () => 
-serverLog(`App listening on port ${port}!`)
-);
+app.listen(port, () => serverLog(`App listening on port ${port}!`));
