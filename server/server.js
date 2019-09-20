@@ -9,7 +9,7 @@ import swaggerDocs from './docs/swagger.json';
 
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 const serverLog = debug('Server:');
 
 app.use(bodyParser.urlencoded({ extended: true }));
