@@ -54,21 +54,54 @@
           }
         }
       }
+    },
+    "/user/json-patch": {
+      "patch": {
+        "tags": [
+          "user"
+        ],
+        "summary": "apply patch to a json object",
+        "description": "applies different patch operations to a json object and return the patched object",
+        "operationId": "patch",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "in": "body",
+          "name": "body",
+          "description": "patch parameters",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/patch"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "patch successful"
+          },
+          "400": {
+            "description": "invalid patch parameters"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [{
+          "Bearer": []
+        }]
+      }
     }
   },
   "securityDefinitions": {
-    "petstore_auth": {
-      "type": "oauth2",
-      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
-      "flow": "implicit",
-      "scopes": {
-        "write:pets": "modify pets in your account",
-        "read:pets": "read your pets"
-      }
-    },
-    "api_key": {
+    "Bearer": {
       "type": "apiKey",
-      "name": "api_key",
+      "name": "Authorization",
       "in": "header"
     }
   },
@@ -84,6 +117,42 @@
           "type": "string"
         },
         "password": {
+          "type": "string"
+        }
+      }
+    },
+    "patch": {
+      "type": "object",
+      "required": [
+        "docs",
+        "patch"
+      ],
+      "properties": {
+        "docs": {
+          "type": "object"
+        },
+        "patch": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/patchObj"
+          }
+        }
+      }
+    },
+    "patchObj": {
+      "type": "object",
+      "required": [
+        "op",
+        "path"
+      ],
+      "properties": {
+        "op": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "value": {
           "type": "string"
         }
       }
