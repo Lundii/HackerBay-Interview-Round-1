@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const secretKey = process.env.SECRET_KEY || 'justanysecret';
+const secretKey = process.env.SECRET_KEY;
 
 /**
  * Util function to help create a token
@@ -24,9 +24,9 @@ export const createToken = (payload) => {
  * @param {object} next - the next middleware function
  */
 export const verifyToken = (req, res, next) => {
-  const authorizationHeader = req.headers.authorzation;
+  const authorizationHeader = req.headers.authorization;
   if (authorizationHeader) {
-    const token = authorizationHeader.split(' ')[1];
+    const token = authorizationHeader.split(' ')[1] || authorizationHeader;
     const options = { expiresIn: '24h' };
     jwt.verify(token, secretKey, options, (error, payload) => {
       if (error) {
