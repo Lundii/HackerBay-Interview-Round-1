@@ -56,7 +56,7 @@ describe('User should be able to login', () => {
     chai.request(server)
       .post('/api/v1/auth/login')
       .send({
-        username: 12323,
+        username: 1234,
         password: 'password',
       })
       .end((error, res) => {
