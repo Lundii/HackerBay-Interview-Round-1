@@ -51,4 +51,20 @@ describe('User should be able to login', () => {
         done();
       });
   });
+
+  it('should return a status code of 422 if the username is not a string', (done) => {
+    chai.request(server)
+      .post('/api/v1/auth/login')
+      .send({
+        username: 1234,
+        password: 'password',
+      })
+      .end((error, res) => {
+        expect(res).to.have.status(422);
+        expect(res).to.be.a('object');
+        expect(res.body).to.have.keys('errors');
+        expect(res.body.errors[0]).to.equal('username must be a string');
+        done();
+      });
+  });
 });
