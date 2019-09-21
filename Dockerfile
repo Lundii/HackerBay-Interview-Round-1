@@ -26,4 +26,5 @@ COPY . .
 # expose port number
 EXPOSE 8080
 
+# start app
 CMD [ "npm", "start" ]
