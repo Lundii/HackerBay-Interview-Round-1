@@ -46,7 +46,7 @@ body
 ```
 
 ## Swagger API documentation
-- `GET host:port/api/v1/docs` 
+- `GET {host}/api/v1/docs` 
 
 ## docker iamge 
 - `docker pull lundii/hackerbay1:backend`
