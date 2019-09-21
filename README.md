@@ -20,7 +20,7 @@ Node.JS Task Round 1
 
 ## APIs 
 
-### Login - `POST {host}/api/v1/login` - Login a user
+### Login - `POST {host}/api/v1/auth/login` - Login a user
 
 body
 ```
