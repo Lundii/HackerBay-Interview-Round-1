@@ -14,25 +14,33 @@ Node.JS Task Round 1
     PORT=portnumber
     SECRET_KEY="a string used for generating JWT"
    ```
- - visit the urls below.
+ - use `npm start` to start the application
+ - use `npm test` to run test files
+ - visit the urls below with the necessary body.
 
 ## APIs 
 
-Login - `POST {host}/api/v1/login` - Login a user
+### Login - `POST {host}/api/v1/login` - Login a user
+
+body
 ```
   username: "string"
   password: "string"
 ```
 
 
-Json patch - `PATCH {host}/api/v1/json-patch` - patch a json object
+### Json patch - `PATCH {host}/api/v1/json-patch` - patch a json object
+
+body
 ```
   docs: "object"
-  patch: "array"
+  patch: "array of path operations"
 ```
 
 
-Thumbnail - `POST {host}/api/v1/thumbnail` - download and return a thumbnail
+### Thumbnail - `POST {host}/api/v1/thumbnail` - download and return a thumbnail
+
+body
 ```
   imageUrl: "string"
 ```
