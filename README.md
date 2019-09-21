@@ -6,7 +6,7 @@ Node.JS Task Round 1
 ## Pivotal Tracker Story Board
 - https://www.pivotaltracker.com/n/projects/2399135
 
-##APIs 
+## APIs 
 
 Login - `POST {host}/api/v1/login` - Login a user
 ```
