@@ -29,7 +29,7 @@ body
 ```
 
 
-### Json patch - `PATCH {host}/api/v1/json-patch` - patch a json object
+### Json patch - `PATCH {host}/api/v1/user/json-patch` - patch a json object
 
 body
 ```
@@ -38,7 +38,7 @@ body
 ```
 
 
-### Thumbnail - `POST {host}/api/v1/thumbnail` - download and return a thumbnail
+### Thumbnail - `POST {host}/api/v1/user/thumbnail` - download and return a thumbnail
 
 body
 ```
