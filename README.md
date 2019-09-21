@@ -6,6 +6,16 @@ Node.JS Task Round 1
 ## Pivotal Tracker Story Board
 - https://www.pivotaltracker.com/n/projects/2399135
 
+## Test locally
+- clone this repository
+- run `npm install` to get all necessary packages 
+- create a .env file in the root folder and add the following environmental variables
+   ```
+    PORT=portnumber
+    SECRET_KEY="a string used for generating JWT"
+   ```
+ - visit the urls below.
+
 ## APIs 
 
 Login - `POST {host}/api/v1/login` - Login a user
@@ -31,4 +41,4 @@ Thumbnail - `PATCH {host}/api/v1/thumbnail` - download and return a thumbnail
 - `GET host:port/api/v1/docs` 
 
 ## docker iamge 
-- `docker pull lundii/hackerbay1`
+- `docker pull lundii/hackerbay1:backend`
