@@ -32,7 +32,7 @@ Json patch - `PATCH {host}/api/v1/json-patch` - patch a json object
 ```
 
 
-Thumbnail - `PATCH {host}/api/v1/thumbnail` - download and return a thumbnail
+Thumbnail - `POST {host}/api/v1/thumbnail` - download and return a thumbnail
 ```
   imageUrl: "string"
 ```
