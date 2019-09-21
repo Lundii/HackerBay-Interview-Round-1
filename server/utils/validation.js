@@ -23,3 +23,10 @@ export const loginValidation = [
   body('username', 'username must be a string').isString(),
   body('password', 'password is required').exists(),
 ];
+
+/**
+ * Array of chained input validations to check the passed imageUrl
+ */
+export const imageUrlValidation = [
+  body('imageUrl', 'imageUrl is required').exists(),
+];

@@ -11,10 +11,12 @@
   },
   "host": "localhost:4000",
   "basePath": "/api/v1",
-  "tags": [{
-    "name": "user",
-    "description": "Handles the user requests"
-  }],
+  "tags": [
+    {
+      "name": "user",
+      "description": "Handles the user requests"
+    }
+  ],
   "schemes": [
     "http"
   ],
@@ -33,15 +35,17 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
-          "in": "body",
-          "name": "body",
-          "description": "login parameters",
-          "required": true,
-          "schema": {
-            "$ref": "#/definitions/login"
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "login parameters",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/login"
+            }
           }
-        }],
+        ],
         "responses": {
           "200": {
             "description": "Succesfully logged in"
@@ -69,15 +73,17 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
-          "in": "body",
-          "name": "body",
-          "description": "patch parameters",
-          "required": true,
-          "schema": {
-            "$ref": "#/definitions/patch"
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "patch parameters",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/patch"
+            }
           }
-        }],
+        ],
         "responses": {
           "200": {
             "description": "patch successful"
@@ -92,9 +98,57 @@
             "description": "Internal server error"
           }
         },
-        "security": [{
-          "Bearer": []
-        }]
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/user/thumbnail": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "creates a thumbnail",
+        "description": "downloads an image from a url and return a thumbnail of it",
+        "operationId": "thumbnail",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "thumb parameters",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/thumbnail"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "thumbnail successfully created"
+          },
+          "400": {
+            "description": "invalid imageUrl"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     }
   },
@@ -153,6 +207,17 @@
           "type": "string"
         },
         "value": {
+          "type": "string"
+        }
+      }
+    },
+    "thumbnail": {
+      "type": "object",
+      "required": [
+        "imageUrl"
+      ],
+      "properties": {
+        "imageUrl": {
           "type": "string"
         }
       }

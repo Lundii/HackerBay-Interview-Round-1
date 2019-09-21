@@ -1,7 +1,8 @@
 import { login } from './authController';
-import { patchJson } from './userController';
+import { patchJson, generateThumbnail } from './userController';
 
 export default {
   login,
   patchJson,
+  generateThumbnail,
 };

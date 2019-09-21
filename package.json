@@ -27,6 +27,8 @@
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-validator": "^6.2.0",
+    "image-downloader": "^3.5.0",
+    "jimp": "^0.8.4",
     "json-patch": "^0.7.0",
     "jsonwebtoken": "^8.5.1",
     "swagger-ui-express": "^4.1.1"

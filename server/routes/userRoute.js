@@ -1,12 +1,15 @@
 import express from 'express';
 import controllers from '../controllers';
-// import { validate, loginValidation } from '../utils/validation';
+import { validate, imageUrlValidation } from '../utils/validation';
 import { verifyToken } from '../utils/verification';
 
 const router = express.Router();
-const { patchJson } = controllers;
+const { patchJson, generateThumbnail } = controllers;
 
-// login a user
+// patch a json
 router.patch('/json-patch', verifyToken, patchJson);
+
+// patch a json
+router.post('/thumbnail', verifyToken, imageUrlValidation, validate, generateThumbnail);
 
 export default router;
